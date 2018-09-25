@@ -1,0 +1,40 @@
+$lightPurple1: #f4ecff;
+$lightPurple2: #e4d2ff;
+$lightPurple3: #caaef2;
+$darkPurple1: #8456ff;
+$darkPurple2: #7e24fa;
+$darkPurple3: #6624d2;
+$red: #ff0051;
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	background-repeat: repeat;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+	// overflow: hidden;
+}
+
+.wrapper {
+    width: 1440px;
+    max-width: 80%;
+}
+
+h1, h2, h3, h4, figure, img, button, p, li, ul, input {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin bp($point) {
+	@if $point == 375 {
+		@media (max-width: 375px) { @content; }
+	}
+	@else if $point == 630 {
+		@media (max-width: 630px) { @content; }
+	}
+	@else if $point == 320 {
+		@media (max-width: 320px)  { @content; }
+	}
+}

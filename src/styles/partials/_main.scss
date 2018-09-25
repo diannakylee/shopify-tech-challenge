@@ -1,0 +1,325 @@
+main {
+    display: flex;
+    @include bp(630) {
+        flex-direction: column;
+    }
+}
+
+.page {
+    width: 50%;
+    height: 100vh;
+    @include bp(630) {
+        width: 100%;
+    }
+}
+
+// Login Side of the Page Starts here (Left & Top)
+
+.page--left {
+    background-color: $lightPurple1;
+    @include bp(630) {
+        height: 60vh;
+        order: 2;
+    }
+}
+
+.login {
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include bp(630) {
+        height: 60vh;
+    }
+    &--remember {
+        display: flex;
+        align-items: center;
+        margin: 100px 0 ;
+        @include bp(630) {
+            margin: 150px 0;
+            position: relative;
+        }
+        @include bp (320) {
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        & label {
+            margin-left: 10px;
+            color: $darkPurple3;
+        }
+    }
+    &--social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $darkPurple3;
+        @include bp (375) {
+            margin-top: 50px;
+        }
+        @include bp (360) {
+            margin-top: 0px;
+        }
+        & p {
+            font-style: italic;
+        }
+        &__icons {
+            display: flex;
+        }
+        &__icon {
+            width: 35px;
+            background-color: $lightPurple2;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 100%;
+            & svg {
+                fill: $darkPurple3;
+            }
+        }
+    }
+}
+
+input[type=checkbox] {
+    border: 2px solid $darkPurple3;
+    background-color: none;
+}
+
+form {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 175px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    @include bp(630) {
+        margin-top: 50px;
+        position: absolute;
+        top: 195px;
+        width: 275px;
+    }
+    @include bp (320) {
+        margin-top: 0;
+        top: 145px;
+    }
+}
+
+input {
+    height:40px;
+    color: $darkPurple2;
+    text-align: center;
+    border: none;
+}
+
+.invalid {
+    border: 2px solid #ff0051;
+}
+
+input[type=text] {
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid $lightPurple1;
+}
+
+#submit {
+    border: none;
+}
+
+
+.submit {
+    background-color: $darkPurple2;
+    width: 252–px;
+    height: 45px;
+    border-radius: 0 0 3px 3px;
+    color: $lightPurple1;
+}
+
+//Loading Button
+.submit{
+    span {
+        transition: all 1s;
+        opacity:1;
+    }
+    svg {
+        display:none; 
+        margin:0 auto;
+        transition: all 1s;
+    }
+}
+
+.loading-start{
+    span{
+        display: none;  
+        opacity: 0;
+    }
+    svg{
+        display: block; 
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        fill: white;
+    }
+}
+
+.svg-loader {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    
+    & .path {
+        stroke: hsl(210, 70, 75);
+        stroke-linecap: round;
+        animation: dash 1.5s ease-in-out infinite;
+    }
+    
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+::placeholder {
+    color: $lightPurple3;
+}
+
+.errorMessage {
+    display: none;
+    color: red;
+    position: absolute;
+    top: 300px;
+    width: 200px;
+    text-align: center;
+    @include bp(630) {
+        top: 320px;
+    }
+    @include bp (320){
+        top: 260px;
+    }
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none
+}
+
+.showFlex {
+    display: flex;
+}
+
+.logout {
+    flex-direction: column;
+    background-color: $darkPurple2;
+    height: 100vh;
+    width: 100%;
+    color: $lightPurple1;
+    align-items: center;
+    text-align: center;
+    @include bp(630) {
+        height: 60vh;
+        position: relative;
+    }
+}
+
+.logout--text {
+    margin: 175px 0px;
+    line-height: 3rem;
+    @include bp(630) {
+        margin-top: 0px;
+        position: absolute;
+        top: -80px;
+    }
+}
+
+
+.logout button {
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 15px;
+    color: $darkPurple3;
+    @include bp (630) {
+        margin-top: 140px;
+    }
+}
+
+
+// Custom Checkbox
+
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+label {
+    cursor: pointer;
+}
+input[type="checkbox"] + label:before {
+    border: 1px solid $darkPurple3;
+    border-radius: 5px;
+    content: "\00a0";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 0 .25em 0 0;
+    vertical-align: top;
+}
+input[type="checkbox"]:checked + label:before {
+    background: $darkPurple3;
+    border: 1px solid $lightPurple1;
+}
+
+
+
+
+
+// Logo Side of the Page Starts Here (Right and Top)
+
+.page--right {
+    background-color: $darkPurple2;
+    & .wrapper {
+        margin: 0 auto;
+        width: 100%;
+    }
+    @include bp(630) {
+        height: 40vh;
+        order: 1;
+    }
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 175px;
+    &--text {
+        margin-bottom: 30px;
+        color: $lightPurple1;
+        @include bp(375) {
+            margin-bottom: 20px;
+        }
+        @include bp(320) {
+            margin-bottom: 15px;
+        }
+    }
+    &--image{
+        background-color: #f4ecff;
+        width: 50px;
+        padding: 8px;
+        border-radius: 5px;
+        border: 2px solid linear-gradient(to top-right, $darkPurple2, $lightPurple2);
+    }
+    @include bp(630) {
+        margin-top: 100px;
+    }
+    @include bp(320) {
+        margin-top: 30px;
+    }
+}
